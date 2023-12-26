@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+:root {
+    --maincolor: rgb(233, 75, 101);
+    --boxcolor: rgb(37, 36, 36);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #161616;
+}
+
+/* Navigation bar */
+#nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+nav ul li {
+    width: 6.5%;
+    display: inline-block;
+    list-style: none;
+    padding: 0 55px;
+}
+
+#logo {
+    width: 5vw;
+    height: auto;
+}
+
+nav ul li a {
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--maincolor);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: var(--maincolor);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Home */
+div {
+    margin-top: 5px;
+}
+
+#home {
+    width: 100%;
+    height: 90vh;
+    background-image: url('images/Ferrari-Home.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: linear-gradient(transparent, black, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home h1, #home1 h1 {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 3px;
+}
+
+#home div img {
+    width: 25vw;
+    opacity: 0.5;
+    animation: opacityDisplay 2s infinite linear;
+}
+
+@keyframes opacityDisplay {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
+
+#homeTitle h1 {
+    text-align: center;
+    -webkit-mask: linear-gradient(black, transparent);
+    animation: opacityDisplay 3s infinite linear;
+}
+
+#home1 img {
+    width: 50%;
+}
+
+#home1 {
+    display: flex;
+    align-items: center;
+    background-color: var(--boxcolor);
+}
+
+#home1 div h2 {
+    text-align: center;
+}
+
+#home1 div p {
+    margin: 15px;
+    opacity: 0.7;
+}
+
+#home1 div a {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 7vw;
+    height: 7vh;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid var(--maincolor);
+    transition: 0.5s;
+}
+
+#home1 div a:hover {
+    background-color: var(--maincolor);
+    transform: scale(1.1);
+}
+
+#home h1 span {
+    color: white;
+    animation: header 3s infinite linear;
+}
+
+@keyframes header {
+    0% {transform: translateY(0px);color: white;}
+    30%, 32% {transform: translateY(-2px);color: var(--maincolor);}
+    60%, 62% {transform: translateY(0px);color: white;}
+}
+
+/* Features */
+#features {
+    margin-top: 80px;
+    padding: 20px;
+    background-color: var(--boxcolor);
+    border-radius: 50px;
+}
+
+#Ferrari {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+}
+
+#features div {
+    display: flex;
+    justify-content: center;
+}
+
+#headlights, #cockpit, #taillights {
+    width: 5vw;
+    height: 2vh;
+    color: var(--boxcolor);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+#lists {
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+#lists div {
+    width: 10vw;
+}
+
+:is(#headlights, #cockpit, #taillights):hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+#contents :is(#front, #middle, #back) {
+    display: none;
+}
