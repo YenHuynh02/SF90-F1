@@ -56,28 +56,66 @@
     <!-- Features -->
     <div id="features">
         <h1>Features</h1>
-        <img src="images/Ferrari-SF90-Stradale.png" id="Ferrari">
-        <div id="lists">
-            <div>
-                <p id="headlights" onclick="openTab('front')" style="background: green;"></p>
-            </div>
-            <div>
-                <p id="cockpit" style="background: white;"></p>
-            </div>
-            <div>
-                <p id="taillights" style="background: red"></p>
+        <div>
+            <img src="images/Ferrari-SF90-Stradale.png" id="Ferrari">
+            <div id="contents">
+                <div id="front">
+                    <h1>Headlights</h1>
+                    <p>
+                        Another signature solution is the headlights which hail a move away
+                        from the L-shaped look, to a slender slit design integrated with the brake air
+                        intakes resulting in a characteristic C-shape which lends the front of the car
+                        an original and futuristic appeal.
+                    </p>
+                    <p>
+                        In an absolute first for a Ferrari, the SF90 Stradale uses matrix LED headlight
+                        technology to improve visibility in all driving conditions thanks to active beam
+                        control.
+                    </p>
+                    <img src="images/Thumb-fari.jpg" id="imgContent1">
+                </div>
+                <div id="middle">
+                    <h1>Aeronautical cockpit</h1>
+                    <p>
+                        More compact overhangs (the rear one is shorter than the front one in particular)
+                        and the frontward-shift of the cabin have created a cab-forward-type architecture
+                        which emphasises the fact that the engine is mid-mounted. A very low centre of gravity
+                        has also allowed the designers to lower the cabin area by 20 mm.
+                    </p>
+                    <p>
+                        Combined with a more curved windshield, slender A-posts and a wide track, this creates a
+                        beautifully proportioned car with sleeker volumes. The compact bubble-shaped cabin has an
+                        aeronautical cockpit feel and the fact that it has been shifted so far forward is further
+                        emphasised by the geometry of the two body-coloured rear flying buttresses that enclose the
+                        rear.
+                    </p>
+                    <img src="images/Thumb-cabina.jpg" id="imgContent2">
+                </div>
+                <div id="back">
+                    <h1>Tail lights</h1>
+                    <p>
+                        The tail lights have also evolved quite radically from Ferrari's iconic round shape. The
+                        eye-catching,
+                        more horizontal luminous rings create a more horizontal perception of the tail lights which in
+                        turn visually lowers the height of the tail.
+                    </p>
+                    <img src="images/Thumb-Scarichi.jpg" id="imgContent3">
+                </div>
             </div>
         </div>
-        <div id="contents">
-            <div id="front">
-                <p>This is Peter</p>
+        <div>
+            <div id="lists">
+                <div>
+                    <p id="headlights" onclick="openTab('front')" style="background: green;"></p>
+                </div>
+                <div>
+                    <p id="cockpit" onclick="openTab('middle')" style="background: white;"></p>
+                </div>
+                <div>
+                    <p id="taillights" onclick="openTab('back')" style="background: red"></p>
+                </div>
             </div>
-            <div id="middle">
-                <p>This is Yen</p>
-            </div>
-            <div id="back">
-                <p>This is Hoai</p>
-            </div>
+
         </div>
     </div>
     <div>
