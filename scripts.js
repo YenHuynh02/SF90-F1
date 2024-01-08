@@ -4,39 +4,46 @@ var currentIndex = 0;
 
 // Display home image
 function displayHome() {
-    homeImg.style.backgroundImage = "url('images/"+ indexHome[currentIndex] + ".jpg')";
+    homeImg.style.backgroundImage = "url('images/" + indexHome[currentIndex] + ".jpg')";
     currentIndex = (currentIndex + 1) % indexHome.length;
 }
 
 setInterval(displayHome, 1500);
 
 // Display features
-var lists = document.getElementById("lists");
-
 function openTab(name) {
     var contents = document.getElementById(name);
     var allContents = document.querySelectorAll("#contents > div");
-    
+    var indexFeatures;
+
     allContents.forEach(function (content) {
         content.style.display = "none";
     });
-    contents.style.display = "block";
+    contents.style.display = "flex";
 
-    
-    switch (name) {
-        case "front":
-            contents.style.backgroundColor = "red";
-            break;
+    if (name == "front" || name == "middle" || name == "back") {
+        if (name == "front") {
+            indexFeatures = "headlights";
+        }
 
-        case "middle":
-            contents.style
-            break;
+        else if (name == "middle") {
+            indexFeatures = "cockpit"
+        }
 
-        case "back":
+        else {
+            indexFeatures = "taillights"
+        }
 
-            break;
+        document.getElementById(indexFeatures).style.width = "50px";
+        document.getElementById(indexFeatures).style.height = "50px";
+        document.getElementById(indexFeatures).style.borderRadius = "50%";
+    }
 
-        default:
-            break;
+    else if (document.getElementById(indexFeatures).style.width == "50px") {
+        if (name == "front" || name == "middle" || name == "back") {
+            document.getElementById(indexFeatures).style.width = "5vw";
+            document.getElementById(indexFeatures).style.height = "2vh";
+            document.getElementById(indexFeatures).style.borderRadius = "0";
+        }
     }
 }
