@@ -206,7 +206,6 @@ div {
     height: 64vh;
     padding: 15px;
     border-radius: 20px;
-    background-color: rgb(73, 72, 72);
 }
 
 #contents :is(#front, #middle, #back) {
@@ -225,4 +224,5 @@ div {
     overflow: hidden;
     margin: 0 auto;
     -webkit-mask-image: linear-gradient(black 50%, transparent);
+    border-radius: 20px;
 }
