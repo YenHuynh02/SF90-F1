@@ -11,39 +11,79 @@ function displayHome() {
 setInterval(displayHome, 1500);
 
 // Display features
+var status = "unchecked";
+var boxContent = document.getElementById("contents");
+boxContent.style.position = "absolute";
+
 function openTab(name) {
     var contents = document.getElementById(name);
+    var headlights = document.getElementById("headlights");
+    var cockpit = document.getElementById("cockpit");
+    var taillights = document.getElementById("taillights");
     var allContents = document.querySelectorAll("#contents > div");
     var indexFeatures;
 
     allContents.forEach(function (content) {
         content.style.display = "none";
     });
-    contents.style.display = "flex";
 
-    if (name == "front" || name == "middle" || name == "back") {
-        if (name == "front") {
-            indexFeatures = "headlights";
-        }
+    switch (status) {
+        case "unchecked":
+            contents.style.display = "flex";
+            if (name == "front") {
+                indexFeatures = "headlights";
+                boxContent.style.left = "200px";
+                cockpit.style.display = "none";
+                taillights.style.display = "none";
+            }
 
-        else if (name == "middle") {
-            indexFeatures = "cockpit"
-        }
+            if (name == "middle") {
+                indexFeatures = "cockpit"
+                boxContent.style.right = "70px";
+                headlights.style.display = "none";
+                taillights.style.display = "none";
+            }
 
-        else {
-            indexFeatures = "taillights"
-        }
+            if (name == "back") {
+                indexFeatures = "taillights"
+                boxContent.style.right = "70px";
+                headlights.style.display = "none";
+                cockpit.style.display = "none";
+            }
+            document.getElementById(indexFeatures).style.width = "50px";
+            document.getElementById(indexFeatures).style.height = "50px";
+            document.getElementById(indexFeatures).style.borderRadius = "50%";
+            boxContent.style.backgroundColor = "rgb(73, 72, 72)";
+            status = "checked";
+            break;
 
-        document.getElementById(indexFeatures).style.width = "50px";
-        document.getElementById(indexFeatures).style.height = "50px";
-        document.getElementById(indexFeatures).style.borderRadius = "50%";
-    }
+        case "checked":
+            contents.style.display = "none";
+            if (name == "front") {
+                indexFeatures = "headlights";
+                boxContent.style.left = "200px";
+                cockpit.style.display = "flex";
+                taillights.style.display = "flex";
+            }
 
-    else if (document.getElementById(indexFeatures).style.width == "50px") {
-        if (name == "front" || name == "middle" || name == "back") {
+            if (name == "middle") {
+                indexFeatures = "cockpit"
+                boxContent.style.left = "70px";
+                headlights.style.display = "flex";
+                taillights.style.display = "flex";
+            }
+
+            if (name == "back") {
+                indexFeatures = "taillights"
+                boxContent.style.right = "70px";
+                headlights.style.display = "flex";
+                cockpit.style.display = "flex";
+            }
             document.getElementById(indexFeatures).style.width = "5vw";
             document.getElementById(indexFeatures).style.height = "2vh";
-            document.getElementById(indexFeatures).style.borderRadius = "0";
-        }
+            document.getElementById(indexFeatures).style.borderRadius = "";
+            boxContent.style.backgroundColor = "transparent";
+            status = "unchecked";
+            break;
     }
 }
