@@ -178,11 +178,40 @@ div {
 }
 
 #headlights, #cockpit, #taillights {
+    position: relative;
     width: 5vw;
     height: 2vh;
     color: var(--boxcolor);
     opacity: 0.5;
     transition: 0.5s;
+}
+
+:is(#headlights, #cockpit, #taillights)::after {
+    color: aliceblue;
+    display: none
+}
+
+#headlights::after {
+    content: "Headlights"; 
+}
+
+#cockpit::after {
+    content: "Cockpit";
+}
+
+#taillights::after {
+    content: "Taillights";
+}
+
+:is(#headlights, #cockpit, #taillights):hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+:is(#headlights, #cockpit, #taillights):hover::after {
+    display: block;
+    transform: translateY(-20px);
 }
 
 #lists {
@@ -195,11 +224,6 @@ div {
     width: 10vw;
 }
 
-:is(#headlights, #cockpit, #taillights):hover {
-    opacity: 1;
-    transform: translateY(-5px);
-    cursor: pointer;
-}
 
 #contents {
     width: 30vw;
