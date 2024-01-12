@@ -23,7 +23,7 @@ function openTab(name) {
     var allContents = document.querySelectorAll("#contents > div");
     var indexFeatures;
 
-    allContents.forEach(function (content) {
+    allContents.forEach((content) => {
         content.style.display = "none";
     });
 
@@ -32,21 +32,18 @@ function openTab(name) {
             contents.style.display = "flex";
             if (name == "front") {
                 indexFeatures = "headlights";
-                boxContent.style.left = "200px";
                 cockpit.style.display = "none";
                 taillights.style.display = "none";
             }
 
             if (name == "middle") {
                 indexFeatures = "cockpit"
-                boxContent.style.right = "70px";
                 headlights.style.display = "none";
                 taillights.style.display = "none";
             }
 
             if (name == "back") {
                 indexFeatures = "taillights"
-                boxContent.style.right = "70px";
                 headlights.style.display = "none";
                 cockpit.style.display = "none";
             }
@@ -54,6 +51,7 @@ function openTab(name) {
             document.getElementById(indexFeatures).style.height = "50px";
             document.getElementById(indexFeatures).style.borderRadius = "50%";
             boxContent.style.backgroundColor = "rgb(73, 72, 72)";
+            boxContent.style.right = "0";
             status = "checked";
             break;
 
@@ -61,21 +59,18 @@ function openTab(name) {
             contents.style.display = "none";
             if (name == "front") {
                 indexFeatures = "headlights";
-                boxContent.style.left = "200px";
                 cockpit.style.display = "flex";
                 taillights.style.display = "flex";
             }
 
             if (name == "middle") {
                 indexFeatures = "cockpit"
-                boxContent.style.left = "70px";
                 headlights.style.display = "flex";
                 taillights.style.display = "flex";
             }
 
             if (name == "back") {
                 indexFeatures = "taillights"
-                boxContent.style.right = "70px";
                 headlights.style.display = "flex";
                 cockpit.style.display = "flex";
             }
@@ -83,6 +78,9 @@ function openTab(name) {
             document.getElementById(indexFeatures).style.height = "2vh";
             document.getElementById(indexFeatures).style.borderRadius = "";
             boxContent.style.backgroundColor = "transparent";
+            boxContent.style.left = "";
+            boxContent.style.right = "";
+            // boxContent.style.right= "-200px";
             status = "unchecked";
             break;
     }
