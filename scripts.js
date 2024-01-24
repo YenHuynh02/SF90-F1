@@ -2,7 +2,6 @@ var indexHome = ["Ferrari-Home1", "Ferrari-Home2", "Ferrari-Home3", "Ferrari-Hom
 var homeImg = document.getElementById('home');
 var currentIndex = 0;
 
-
 // Display home image
 function displayHome() {
     homeImg.style.backgroundImage = "url('images/" + indexHome[currentIndex] + ".jpg')";
