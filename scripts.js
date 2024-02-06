@@ -9,6 +9,7 @@ function displayHome() {
 }
 
 setInterval(displayHome, 1500);
+
 // Display features
 var status = "unchecked";
 var boxContent = document.getElementById("contents");
